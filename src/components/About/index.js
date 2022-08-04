@@ -11,6 +11,7 @@ const About = () => {
         style={{ width: "100%" }}
         alt="cover"
       />
+      <p>lorem ipsum impsum lorem</p>
     </section>
   );
 };
