@@ -17,6 +17,9 @@ function ContactForm() {
   // this object. Without the spread operator, the formState
   // object would be overwritten to only contain the name: value key pair.
 
+  //changed onChange to onBlur, so it fires the event once use has changed focus
+  //from the input field, allowing them to finish before an error is displayed
+
   function handleChange(e) {
     // validates email with imported function
     if (e.target.name === "email") {
@@ -62,7 +65,7 @@ function ContactForm() {
           <input
             type="text"
             defaultValue={name}
-            onChange={handleChange}
+            onBlur={handleChange}
             name="name"
           />
         </div>
@@ -71,7 +74,7 @@ function ContactForm() {
           <input
             type="email"
             defaultValue={email}
-            onChange={handleChange}
+            onBlur={handleChange}
             name="email"
           />
         </div>
@@ -80,7 +83,7 @@ function ContactForm() {
           <textarea
             name="message"
             defaultValue={message}
-            onChange={handleChange}
+            onBlur={handleChange}
             rows="5"
           />
         </div>
@@ -95,5 +98,4 @@ function ContactForm() {
     </section>
   );
 }
-
 export default ContactForm;
